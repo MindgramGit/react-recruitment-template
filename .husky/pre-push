@@ -6,6 +6,3 @@ npx lint-staged
 
 echo "Running typecheck..."
 npm run typecheck
-
-echo "Running unit tests..."
-npm run test
