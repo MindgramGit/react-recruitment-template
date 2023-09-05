@@ -1,0 +1,43 @@
+name: CI Test & Build
+description: "Test and build the application using Node.js from .nvmrc"
+
+# Assumes that code is already checked out (which is necessary for local actions)
+runs:
+    using: composite
+    steps:
+        - name: Setup Node.js
+          uses: actions/setup-node@v3
+          with:
+              node-version-file: ".nvmrc"
+
+        - name: Cache node_modules
+          id: cache_node_modules
+          uses: actions/cache@v3
+          with:
+              path: ./node_modules
+              key: node_modules-${{ hashFiles('package-lock.json') }}
+
+        - name: Install node_modules
+          if: steps.cache_node_modules.outputs.cache-hit != 'true'
+          shell: bash
+          run: npm ci --ignore-scripts
+
+        - name: Run lint
+          shell: bash
+          run: npm run lint
+
+        - name: Run prettify
+          shell: bash
+          run: npm run prettify
+
+        - name: Run typecheck
+          shell: bash
+          run: npm run typecheck
+
+        - name: Run tests
+          shell: bash
+          run: npm run test
+
+        - name: Run build
+          shell: bash
+          run: npm run build

@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "EditorConfig.EditorConfig",
+        "aaron-bond.better-comments",
+        "christian-kohler.npm-intellisense",
+        "dbaeumer.vscode-eslint",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "gruntfuggly.todo-tree",
+        "mhutchie.git-graph",
+        "styled-components.vscode-styled-components",
+        "visualstudioexptteam.vscodeintellicode"
+    ]
+}
