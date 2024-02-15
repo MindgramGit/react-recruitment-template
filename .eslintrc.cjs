@@ -11,7 +11,7 @@ module.exports = {
         browser: true,
         es2020: true,
     },
-    extends: ["airbnb", "airbnb-typescript", "airbnb/hooks", "prettier", "plugin:storybook/recommended"],
+    extends: ["airbnb", "airbnb-typescript", "airbnb/hooks", "prettier"],
     plugins: ["@typescript-eslint", "react", "react-hooks", "simple-import-sort"],
     rules: {
         "@typescript-eslint/explicit-module-boundary-types": "off",
